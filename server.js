@@ -25,7 +25,7 @@ app.post('/transaction/documents/upload', upload.array('documents', 3), (req, re
   const files = req.files
 
   const filesList = files.map((file) => {
-    return `http://localhost:3004/uploads/${file.filename}`
+    return `/uploads/${file.filename}`
   })
   return res.json(filesList)
 })
